@@ -15,6 +15,14 @@
 		DE4187E324A10AC0004ECA54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE4187E124A10AC0004ECA54 /* LaunchScreen.storyboard */; };
 		DE4187EE24A10AC0004ECA54 /* FunSwitch_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4187ED24A10AC0004ECA54 /* FunSwitch_TestTests.swift */; };
 		DE4187F924A10AC0004ECA54 /* FunSwitch_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4187F824A10AC0004ECA54 /* FunSwitch_TestUITests.swift */; };
+		DE41880724A10F73004ECA54 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE41880624A10F73004ECA54 /* ResultVC.swift */; };
+		DE41880A24A110EF004ECA54 /* SwiftExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE41880924A110EF004ECA54 /* SwiftExt.swift */; };
+		DE41881524A11384004ECA54 /* DialogLoaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE41880C24A11383004ECA54 /* DialogLoaderViewController.xib */; };
+		DE41881724A11384004ECA54 /* DialogLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE41880E24A11383004ECA54 /* DialogLoaderViewController.swift */; };
+		DE41881F24A120D0004ECA54 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE41881E24A120D0004ECA54 /* Toast.swift */; };
+		DE41882324A13304004ECA54 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE41882124A13304004ECA54 /* SettingVC.swift */; };
+		DE41882424A13304004ECA54 /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE41882224A13304004ECA54 /* SettingVC.xib */; };
+		DE41882624A1353D004ECA54 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE41882524A1353D004ECA54 /* UserDefaultsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		DE4187F424A10AC0004ECA54 /* FunSwitch TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FunSwitch TestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE4187F824A10AC0004ECA54 /* FunSwitch_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunSwitch_TestUITests.swift; sourceTree = "<group>"; };
 		DE4187FA24A10AC0004ECA54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE41880624A10F73004ECA54 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
+		DE41880924A110EF004ECA54 /* SwiftExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftExt.swift; sourceTree = "<group>"; };
+		DE41880C24A11383004ECA54 /* DialogLoaderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DialogLoaderViewController.xib; sourceTree = "<group>"; };
+		DE41880E24A11383004ECA54 /* DialogLoaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogLoaderViewController.swift; sourceTree = "<group>"; };
+		DE41881E24A120D0004ECA54 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		DE41882124A13304004ECA54 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		DE41882224A13304004ECA54 /* SettingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingVC.xib; sourceTree = "<group>"; };
+		DE41882524A1353D004ECA54 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +115,11 @@
 		DE4187D524A10ABC004ECA54 /* FunSwitch Test */ = {
 			isa = PBXGroup;
 			children = (
+				DE41882024A120ED004ECA54 /* Controllers */,
+				DE41880B24A11383004ECA54 /* LoaderViewController */,
+				DE41880824A110BD004ECA54 /* Extensions */,
 				DE4187D624A10ABC004ECA54 /* AppDelegate.swift */,
 				DE4187D824A10ABC004ECA54 /* SceneDelegate.swift */,
-				DE4187DA24A10ABC004ECA54 /* ViewController.swift */,
 				DE4187DC24A10ABC004ECA54 /* Main.storyboard */,
 				DE4187DF24A10AC0004ECA54 /* Assets.xcassets */,
 				DE4187E124A10AC0004ECA54 /* LaunchScreen.storyboard */,
@@ -126,6 +144,36 @@
 				DE4187FA24A10AC0004ECA54 /* Info.plist */,
 			);
 			path = "FunSwitch TestUITests";
+			sourceTree = "<group>";
+		};
+		DE41880824A110BD004ECA54 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DE41882524A1353D004ECA54 /* UserDefaultsManager.swift */,
+				DE41881E24A120D0004ECA54 /* Toast.swift */,
+				DE41880924A110EF004ECA54 /* SwiftExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DE41880B24A11383004ECA54 /* LoaderViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DE41880C24A11383004ECA54 /* DialogLoaderViewController.xib */,
+				DE41880E24A11383004ECA54 /* DialogLoaderViewController.swift */,
+			);
+			path = LoaderViewController;
+			sourceTree = "<group>";
+		};
+		DE41882024A120ED004ECA54 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE4187DA24A10ABC004ECA54 /* ViewController.swift */,
+				DE41880624A10F73004ECA54 /* ResultVC.swift */,
+				DE41882124A13304004ECA54 /* SettingVC.swift */,
+				DE41882224A13304004ECA54 /* SettingVC.xib */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +281,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE4187E324A10AC0004ECA54 /* LaunchScreen.storyboard in Resources */,
+				DE41881524A11384004ECA54 /* DialogLoaderViewController.xib in Resources */,
 				DE4187E024A10AC0004ECA54 /* Assets.xcassets in Resources */,
+				DE41882424A13304004ECA54 /* SettingVC.xib in Resources */,
 				DE4187DE24A10ABC004ECA54 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,8 +310,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE4187DB24A10ABC004ECA54 /* ViewController.swift in Sources */,
+				DE41882324A13304004ECA54 /* SettingVC.swift in Sources */,
+				DE41880724A10F73004ECA54 /* ResultVC.swift in Sources */,
+				DE41881724A11384004ECA54 /* DialogLoaderViewController.swift in Sources */,
+				DE41880A24A110EF004ECA54 /* SwiftExt.swift in Sources */,
+				DE41882624A1353D004ECA54 /* UserDefaultsManager.swift in Sources */,
 				DE4187D724A10ABC004ECA54 /* AppDelegate.swift in Sources */,
 				DE4187D924A10ABC004ECA54 /* SceneDelegate.swift in Sources */,
+				DE41881F24A120D0004ECA54 /* Toast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,29 +8,47 @@
 
 import UIKit
 import WebKit
+import UserNotifications
 
-class ResultVC: UIViewController {
+class ResultVC: UIViewController{
 @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var midView: UIView!
     
-    var str = "https://www.google.com/"
-    
+    var str = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if(str.validateUrl()){
-            
+         if let url = URL(string: str),!url.isValidYouTube(){
+            midView.isHidden = true
+            webView.isHidden = false
+            setUpView()
         }
-        
-//        if str.validateURL(urlString: str) && str.isYouTubeUrl(urlString: str){
-//          midView.isHidden = true
-//          setUpView()
-//        }
-//        else{
-//            midView.isHidden = false
-//        }
-        
+        else{
+            midView.isHidden = false
+            webView.isHidden = true
+        }
+    }
+    
+    func setUpNotificationContent(){
+        let content = UNMutableNotificationContent()
+        content.title = "YouTube starts"
+        content.subtitle = "It is running"
+        content.sound = UNNotificationSound.default
+
+        // show this notification one seconds from now
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+
+        // choose a random identifier
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+        // add our notification request
+        UNUserNotificationCenter.current().add(request)
+    }
+    
+    func removeNotification(){
+    let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.removeAllDeliveredNotifications()
     }
     
     func setUpView(){
@@ -52,9 +70,17 @@ class ResultVC: UIViewController {
 
 extension ResultVC : WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        self.showLoader()
-   
-          decisionHandler(.allow)
+        if !(navigationAction.request.url?.isValidYouTube() ?? true){
+            midView.isHidden = true
+            self.showLoader()
+            decisionHandler(.allow)
+        }
+        else{
+             webView.isHidden = true
+             midView.isHidden = false
+             decisionHandler(.cancel)
+        }
+        
         }
         
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -68,5 +94,12 @@ extension ResultVC : WKNavigationDelegate {
     
 }
 
+extension ResultVC: UNUserNotificationCenterDelegate{
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
 
-
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
+    }
+}

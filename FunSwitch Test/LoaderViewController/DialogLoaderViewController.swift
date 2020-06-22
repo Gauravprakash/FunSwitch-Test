@@ -1,10 +1,11 @@
 //
 //  DialogLoaderViewController.swift
-//  Travolution
+//  FunSwitch Test
 //
-//  Created by Hemant Singh on 22/12/17.
-//  Copyright © 2017 Zillious Solutions. All rights reserved.
+//  Created by gaurav on 22/06/20.
+//  Copyright © 2020 mackbook. All rights reserved.
 //
+
 
 import UIKit
 
@@ -18,7 +19,6 @@ class DialogLoaderViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        activityIndicator.tintColor = Theme.accentColor
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
             // Do any additional setup after loading the view.
         }
