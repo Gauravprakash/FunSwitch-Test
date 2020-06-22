@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FlightSearchLoaderViewController" customModule="CWT_FOR_YOU" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="WbQ-7B-ai8" id="XtI-fo-g2q"/>
+                <outlet property="flight" destination="d3l-Cr-aA4" id="vXM-g0-FLJ"/>
+                <outlet property="loadingMessageLabel" destination="QNc-Ir-O3I" id="acY-6E-fzM"/>
+                <outlet property="loadingTitleLabel" destination="Ges-AZ-44I" id="qwj-Xo-p5c"/>
+                <outlet property="mapImage" destination="xoK-C9-7ak" id="yDg-M3-g1o"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flightLoaderBG" translatesAutoresizingMaskIntoConstraints="NO" id="xoK-C9-7ak">
+                    <rect key="frame" x="0.0" y="20" width="675" height="647"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d3l-Cr-aA4">
+                    <rect key="frame" x="167.5" y="313.5" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="31r-pE-fUp"/>
+                        <constraint firstAttribute="height" constant="40" id="yxU-Xe-SNu"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ges-AZ-44I">
+                    <rect key="frame" x="16" y="594" width="343" height="0.0"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNc-Ir-O3I">
+                    <rect key="frame" x="16" y="604" width="343" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WbQ-7B-ai8">
+                    <rect key="frame" x="169" y="619" width="37" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="37" id="E4O-Bg-6cA"/>
+                        <constraint firstAttribute="height" constant="37" id="yrf-fi-7oK"/>
+                    </constraints>
+                    <state key="normal" image="ic_close"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="18"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="cancel_Action:" destination="-1" eventType="touchUpInside" id="SMF-2X-9Uq"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WbQ-7B-ai8" secondAttribute="bottom" constant="11" id="BPR-Kw-l8c"/>
+                <constraint firstItem="d3l-Cr-aA4" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="EfZ-Wg-P6I"/>
+                <constraint firstItem="xoK-C9-7ak" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Inf-vp-gbh"/>
+                <constraint firstItem="WbQ-7B-ai8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="VHb-bb-Elv"/>
+                <constraint firstItem="QNc-Ir-O3I" firstAttribute="top" secondItem="Ges-AZ-44I" secondAttribute="bottom" constant="10" id="a5g-Oc-ZM6"/>
+                <constraint firstAttribute="trailing" secondItem="Ges-AZ-44I" secondAttribute="trailing" constant="16" id="hNo-Bv-QMH"/>
+                <constraint firstItem="WbQ-7B-ai8" firstAttribute="top" secondItem="QNc-Ir-O3I" secondAttribute="bottom" constant="15" id="kAm-Ik-rhV"/>
+                <constraint firstItem="d3l-Cr-aA4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kyr-dZ-LUy"/>
+                <constraint firstAttribute="trailing" secondItem="xoK-C9-7ak" secondAttribute="trailing" constant="-300" id="m3X-54-s2A"/>
+                <constraint firstItem="xoK-C9-7ak" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nBH-ex-MuD"/>
+                <constraint firstItem="Ges-AZ-44I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="t7r-Bz-kO8"/>
+                <constraint firstItem="QNc-Ir-O3I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="tLk-Kf-iZh"/>
+                <constraint firstItem="xoK-C9-7ak" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="uQX-CF-45k"/>
+                <constraint firstAttribute="trailing" secondItem="QNc-Ir-O3I" secondAttribute="trailing" constant="16" id="uRb-Y7-YFA"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="flightLoaderBG" width="375" height="346"/>
+        <image name="ic_close" width="24" height="24"/>
+    </resources>
+</document>
