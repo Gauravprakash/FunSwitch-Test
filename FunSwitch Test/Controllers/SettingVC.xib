@@ -56,7 +56,6 @@
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AL2-bS-UTc">
                     <rect key="frame" x="349" y="144" width="51" height="31"/>
                     <connections>
-                        <action selector="switchHandler:" destination="-1" eventType="valueChanged" id="cy2-8I-Xie"/>
                         <action selector="timeHandler:" destination="-1" eventType="valueChanged" id="8pX-iC-a4h"/>
                     </connections>
                 </switch>

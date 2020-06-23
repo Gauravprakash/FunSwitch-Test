@@ -19,16 +19,21 @@ class ResultVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         if let url = URL(string: str),!url.isValidYouTube(){
-            midView.isHidden = true
-            webView.isHidden = false
-            setUpView()
-        }
-        else{
-            midView.isHidden = false
-            webView.isHidden = true
-        }
-    }
+        if let url = URL(string: str), url.isValidYouTube(), DefaultsManager.getBlockedStatus(), !DefaultsManager.getTimerStatus(){
+                   midView.isHidden = false
+                   webView.isHidden = true
+                 }
+               
+               else{
+                     midView.isHidden = true
+                     webView.isHidden = false
+                     setUpView()
+               if let url = URL(string: str), url.isValidYouTube(){
+                 setUpNotificationContent()
+            }
+                    
+            }
+          }
     
     func setUpNotificationContent(){
         let content = UNMutableNotificationContent()
@@ -70,15 +75,17 @@ class ResultVC: UIViewController{
 
 extension ResultVC : WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        if !(navigationAction.request.url?.isValidYouTube() ?? true){
-            midView.isHidden = true
-            self.showLoader()
-            decisionHandler(.allow)
+        if (navigationAction.request.url?.isValidYouTube() ?? true && DefaultsManager.getBlockedStatus() && !DefaultsManager.getTimerStatus()){
+            webView.isHidden = true
+            midView.isHidden = false
+            decisionHandler(.cancel)
+           
         }
         else{
-             webView.isHidden = true
-             midView.isHidden = false
-             decisionHandler(.cancel)
+             midView.isHidden = true
+             webView.isHidden = false
+             self.showLoader()
+             decisionHandler(.allow)
         }
         
         }

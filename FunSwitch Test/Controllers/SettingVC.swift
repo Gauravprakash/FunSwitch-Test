@@ -16,6 +16,8 @@ class SettingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.clear.withAlphaComponent(0.7)
+        blockSwitch.setOn(DefaultsManager.getBlockedStatus(), animated: true)
+        timerSwitch.setOn(DefaultsManager.getTimerStatus(), animated: true)
     }
 
 
@@ -24,11 +26,22 @@ class SettingVC: UIViewController {
     }
     
     @IBAction func switchHandler(_ sender: UISwitch) {
-        DefaultsManager.setBlockStatus(value: sender.isOn)
+  
+          DefaultsManager.setBlockStatus(value: sender.isOn)
+        
+        
     }
     
     @IBAction func timeHandler(_ sender: UISwitch) {
         DefaultsManager.setTimerStatus(value: sender.isOn)
+        if(sender.isOn){
+         blockSwitch.isUserInteractionEnabled = false
+         blockSwitch.setOn(false, animated: true)
+         DefaultsManager.setBlockStatus(value: false)
+        }
+        else{
+            blockSwitch.isUserInteractionEnabled = true
+        }
         
     }
 }
