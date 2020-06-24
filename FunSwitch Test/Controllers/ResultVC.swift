@@ -28,7 +28,7 @@ class ResultVC: UIViewController{
                      midView.isHidden = true
                      webView.isHidden = false
                      setUpView()
-               if let url = URL(string: str), url.isValidYouTube(){
+               if let url = URL(string: str), url.isValidYouTube(), DefaultsManager.getTimerStatus(){
                  setUpNotificationContent()
             }
                     
